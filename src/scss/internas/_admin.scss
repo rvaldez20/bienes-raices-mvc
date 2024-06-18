@@ -1,0 +1,59 @@
+
+.alerta {
+   padding: .5rem;
+   text-align: center;
+   color: $blanco;
+   font-weight: $bold;
+   text-transform: uppercase;
+   margin: 1rem 0;
+
+   &.error {
+      background-color: #e61d1d;
+   }
+
+   &.exito {
+      background-color: $verde;
+   }
+}
+
+table.propiedades {
+   margin-top: 4rem;
+   width: 100%;
+   border-spacing: 0;
+   border: 1px solid #e0e0e0;
+
+   thead {
+      background-color: $verde;
+
+      th {
+         color: $blanco;
+         padding: 2rem;
+         border: 1px solid #e0e0e0;
+      }
+   }
+
+   tbody {
+
+      tr {
+         color: $blanco;
+         padding: 2rem;
+
+         td {
+            text-align: center;
+            color: $negro;
+            border: 1px solid #e0e0e0;
+            // vertical-align: middle;
+         }
+      }
+
+   }
+
+   .imagen-tabla {
+      width: 100px;
+   }
+}
+
+
+.imagen-small {
+   width: 20rem;
+}
