@@ -25,7 +25,7 @@ class Router {
          // URL valida y podmeos obtener la funcion asociada
          call_user_func($fn, $this);
 
-         // debug($fn);
+         // debug($this);
       } else {
          echo "Pagina no encontrada";
       }
