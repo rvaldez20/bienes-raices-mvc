@@ -1,10 +1,24 @@
+<?php
+
+if(!isset($_SESSION)) {
+   session_start();
+
+   }
+   // var_dump($_SESSION);
+   $auth = $_SESSION['login'] ?? false;
+
+   if(!isset($inicio)) {
+      $inicio = false;
+   }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Bienes Raices</title>
-   <link rel="stylesheet" href="../public/build/css/app.css">
+   <link rel="stylesheet" href="../build/css/app.css">
 </head>
 <body>
    <!-- HEADER -->
@@ -64,7 +78,7 @@
       <p class="copyright">Todos los Derechos Reservados <?php echo $fecha ?> &copy;</p>
    </footer>
 
-   <script src="../public/build/js/bundle.min.js"></script>
+   <script src="../build/js/bundle.min.js"></script>
 </body>
 </html>
 
