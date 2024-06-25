@@ -15,10 +15,11 @@ class Router {
       $urlActual = $_SERVER['PATH_INFO'] ?? '/';
       $metodo = $_SERVER['REQUEST_METHOD'];
 
+      // debug($this);
+
       // obtenemos la funcion (fn) asociada al url
       if($metodo === 'GET') {
          $fn = $this->rutasGET[$urlActual] ?? null;
-
       }
 
       if($fn) {
