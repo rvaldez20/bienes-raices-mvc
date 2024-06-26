@@ -27,7 +27,6 @@ class Router {
          $fn = $this->rutasPOST[$urlActual] ?? null;
       }
 
-
       if($fn) {
          // URL valida y podmeos obtener la funcion asociada
          call_user_func($fn, $this);
