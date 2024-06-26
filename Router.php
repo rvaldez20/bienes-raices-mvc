@@ -11,16 +11,22 @@ class Router {
       $this->rutasGET[$url] = $fn;
    }
 
+   public function post($url, $fn) {
+      $this->rutasPOST[$url] = $fn;
+   }
+
    public function comprobarRutas() {
       $urlActual = $_SERVER['PATH_INFO'] ?? '/';
       $metodo = $_SERVER['REQUEST_METHOD'];
 
-      // debug($this);
 
-      // obtenemos la funcion (fn) asociada al url
+      // obtenemos la funcion (fn) asociada al url (GET)
       if($metodo === 'GET') {
          $fn = $this->rutasGET[$urlActual] ?? null;
+      } else {
+         $fn = $this->rutasPOST[$urlActual] ?? null;
       }
+
 
       if($fn) {
          // URL valida y podmeos obtener la funcion asociada
