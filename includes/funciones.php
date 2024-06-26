@@ -62,3 +62,14 @@ function validarTipoContenido($tipo) {
 
    return $mensaje;
  }
+
+ function validarORedireccioanr(String $url) {
+   // Validamos si no es un id valido redireccionamos al admin
+   $id = $_GET["id"];
+   $id = filter_var($id, FILTER_VALIDATE_INT);
+   if(!$id) {
+      header("Location: $url");
+   }
+
+   return $id;
+ }

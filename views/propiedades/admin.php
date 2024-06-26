@@ -34,7 +34,7 @@
                <td>$ <?php echo number_format($propiedad->precio, 2, '.', ','); ?></td>
                <td>
                   <!-- se modifico uri pq dulicaba el admin -->
-                  <a href="admin/propiedades/actualizar.php?id=<?php echo $propiedad->id; ?>" class="boton-amarillo-block">Actualizar</a>
+                  <a href="/propiedades/actualizar?id=<?php echo $propiedad->id; ?>" class="boton-amarillo-block">Actualizar</a>
 
                   <form method="POST" class="w-100">
                      <input type="hidden" name="id" value="<?php echo $propiedad->id; ?>">
