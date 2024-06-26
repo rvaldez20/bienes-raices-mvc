@@ -11,7 +11,7 @@
 
    <h2>Propiedades</h2>
 
-   <a href="/admin/propiedades/crear.php" class="boton-amarillo">Nueva Propiedad</a>
+   <a href="/propiedades/crear" class="boton-amarillo">Nueva Propiedad</a>
 
    <table class="propiedades">
       <thead>
