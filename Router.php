@@ -33,14 +33,17 @@ class Router {
    }
 
    // Muestra una vista
-   public function render($view) {
+   public function render($view, $datos= []) {
+
+      foreach($datos as $key => $value) {
+         $$key = $value;
+      }
+
       // ob_start() permite iniciar un alamacenamiento en memoria
       ob_start();
          include __DIR__ . "/views/$view.php";
-
          // inyecta en layout en $contenido la vista que le pasamos desde el index.php
          $contenido = ob_get_clean();
-
          include __DIR__ . "/views/layout.php";
    }
 }
