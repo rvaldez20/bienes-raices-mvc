@@ -11,6 +11,7 @@ class PropiedadController {
    public static function index(Router $router) {
       //! usamos el modelo para obtener la data de propiedades
       $propiedades = Propiedad::all();
+      $vendedores = Vendedor::all();
 
       //mensaje condicional
       $resultado = $_GET["resultado"] ?? null;  //checamos si esta esta establecido reusltado
@@ -18,7 +19,8 @@ class PropiedadController {
       //! le pasamos la data $propiedades a la vista
       $router->render('propiedades/admin', [
          'propiedades' => $propiedades,
-         'resultado' => $resultado
+         'resultado' => $resultado,
+         'vendedores' => $vendedores
       ]);
    }  // method index
 

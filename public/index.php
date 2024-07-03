@@ -18,7 +18,7 @@ $router->get('/propiedades/actualizar', [PropiedadController::class, 'actualizar
 $router->post('/propiedades/actualizar', [PropiedadController::class, 'actualizar']);
 $router->post('/propiedades/eliminar', [PropiedadController::class, 'eliminar']);
 
-$router->get('/admin/vendedores', [VendedorController::class, 'index']);
+// $router->get('/admin/vendedores', [VendedorController::class, 'index']);
 
 
 $router->comprobarRutas();
