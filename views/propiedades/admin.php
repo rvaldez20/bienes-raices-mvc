@@ -36,7 +36,7 @@
                   <!-- se modifico uri pq dulicaba el admin -->
                   <a href="/propiedades/actualizar?id=<?php echo $propiedad->id; ?>" class="boton-amarillo-block">Actualizar</a>
 
-                  <form method="POST" class="w-100">
+                  <form method="POST" class="w-100" action="/propiedades/eliminar">
                      <input type="hidden" name="id" value="<?php echo $propiedad->id; ?>">
                      <input type="hidden" name="tipo" value="propiedad">
                      <!-- <input type="hidden" name="tipo" value="vendedor"> -->
@@ -47,4 +47,6 @@
          <?php endforeach;; ?>
       </tbody>
    </table>
+
+
 </main>

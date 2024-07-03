@@ -20,7 +20,7 @@ class PropiedadController {
          'propiedades' => $propiedades,
          'resultado' => $resultado
       ]);
-   }
+   }  // method index
 
    public static function crear(Router $router) {
 
@@ -72,7 +72,7 @@ class PropiedadController {
          'vendedores' => $vendedores,
          'errores' => $errores
       ]);
-   }
+   } // method crear
 
    public static function actualizar(Router $router) {
 
@@ -129,8 +129,24 @@ class PropiedadController {
          'errores' => $errores,
          'vendedores' => $vendedores
       ]);
+   }  // method actualizar
 
+   public static function eliminar() {
+      if($_SERVER["REQUEST_METHOD"] === 'POST') {
+
+         $id = $_POST["id"];
+         $id = filter_var($id, FILTER_VALIDATE_INT);
+
+         // verificamos que tengamos un id
+         if($id) {
+
+            $tipo = $_POST['tipo'];
+
+            if(validarTipoContenido($tipo)) {
+               $propiedad = Propiedad::find($id); // consulta el propiedad
+               $propiedad->eliminar();            // elimina propiedad
+            }
+         }
+      }
    }
-
-
 }
