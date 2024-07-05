@@ -37,8 +37,21 @@ class VendedorController {
    } // method crear
 
 
-   public static function actualizar() {
-      echo "Actualizar Vendedor";
+   public static function actualizar(Router $router) {
+
+      $id = validarORedireccioanr('/admin');
+
+      //! Obtener el arreglo del vendedor
+      $vendedor = Vendedor::find($id);
+
+      //! seteamos los errores
+      $errores = Vendedor::getErrores();
+
+      $router->render('vendedores/actualizar', [
+         'errores' => $errores,
+         'vendedor' => $vendedor
+      ]);
+
    } // method actualizar
 
    public static function eliminar() {
