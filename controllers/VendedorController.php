@@ -47,6 +47,22 @@ class VendedorController {
       //! seteamos los errores
       $errores = Vendedor::getErrores();
 
+      if($_SERVER["REQUEST_METHOD"] === 'POST') {
+
+         // Asiganar valores
+         $args = $_POST['vendedor'];
+
+         // Sincronizar objeto en meoria con lo que el usario ecribio
+         $vendedor->sincronizar($args);
+
+         // validacion del formulario
+         $errores = $vendedor->validar();
+
+         if(empty($errores)) {
+            $vendedor->guardar();
+         }
+      }
+
       $router->render('vendedores/actualizar', [
          'errores' => $errores,
          'vendedor' => $vendedor

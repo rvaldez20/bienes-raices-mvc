@@ -10,7 +10,7 @@
       </div>
    <?php endforeach; ?>
 
-   <form class="formulario" method="POST" action="/vendedores/actualizar">
+   <form class="formulario" method="POST">
 
       <?php include __DIR__ . '/formulario.php' ?>
 
