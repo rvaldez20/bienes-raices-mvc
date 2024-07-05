@@ -2,10 +2,23 @@
 
 namespace Controllers;
 
+use MVC\Router;
+use Model\Propiedad;
+
 class PaginasController {
 
-   public static function index() {
-      echo 'desde index';
+   public static function index(Router $router) {
+
+      // obtenemos todas las propiedades
+      $propiedades = Propiedad::get(3);
+
+      // inicializamos $inicio para visualizar el banner
+      $inicio = true;
+
+      $router->render('paginas/index', [
+         'propiedades' => $propiedades,
+         'inicio' => $inicio
+      ]);
    }
 
    public static function nosotros() {
