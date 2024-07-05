@@ -6,19 +6,17 @@ use Model\Vendedor;
 
 class VendedorController {
 
-   public static function index(Router $router) {
-      //! usamos el modelo para obtener la data de vendedores
-      $vendedores = Vendedor::all();
+   public static function crear() {
+      echo "Crear Vendedor";
+   } // method crear
 
-      //! mensaje condicional
-      $resultado = $_GET["resultado"] ?? null;  //checamos si esta esta establecido reusltado
 
-      //! le pasamos la data $propiedades a la vista
-      $router->render('vendedores/admin', [
-         'vendedores' => $vendedores,
-         'resultado' => $resultado
-      ]);
+   public static function actualizar() {
+      echo "Actualizar Vendedor";
+   } // method actualizar
 
-   }
+   public static function eliminar() {
+      echo "Eliminar Vendedor";
+   } // method eliminar
 
-}
+}  // class
