@@ -50,7 +50,7 @@
 
    <h2>Vendedores</h2>
 
-   <a href="/admin/vendedores/crear.php" class="boton-amarillo">Nuevo Vendedor(a)</a>
+   <a href="/vendedores/crear" class="boton-amarillo">Nuevo Vendedor(a)</a>
 
    <table class="propiedades">
       <thead>
