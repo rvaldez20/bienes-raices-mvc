@@ -8,7 +8,6 @@ use Model\Propiedad;
 class PaginasController {
 
    public static function index(Router $router) {
-
       // obtenemos todas las propiedades
       $propiedades = Propiedad::get(3);
 
@@ -21,8 +20,11 @@ class PaginasController {
       ]);
    }
 
-   public static function nosotros() {
-      echo 'desde nosotros';
+   public static function nosotros(Router $router) {
+
+      $router->render('paginas/nosotros', [
+
+      ]);
    }
 
    public static function propiedades() {
